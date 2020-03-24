@@ -1,0 +1,25 @@
+{
+  "name": "lakeside",
+  "version": "0.0.1",
+  "description": "CLI command runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixeldesu/lakeside.git"
+  },
+  "keywords": [
+    "cli",
+    "commands",
+    "runner",
+    "node"
+  ],
+  "author": "Andreas Nedbal <git@pixelde.su>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixeldesu/lakeside/issues"
+  },
+  "homepage": "https://github.com/pixeldesu/lakeside#readme"
+}
