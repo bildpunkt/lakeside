@@ -12,6 +12,7 @@ if (cliArguments.includes('--help')) {
   cliArguments.splice(cliArguments.indexOf('--help'), 1);
 
   lakeside.help();
+  return 0;
 }
 
 if (cliArguments.length > 0) {
