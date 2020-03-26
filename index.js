@@ -43,11 +43,20 @@ Commands:`);
 
     const that = this;
     const commandKeys = Object.keys(that.commands);
+    const commandLines = [];
 
     commandKeys.forEach(function (command) {
       let currentCommand = that.commands[command];
 
-      console.log(`${currentCommand.commandName().padEnd(stringPadding)}${currentCommand.commandDescription()}`)
+      if (currentCommand.commandVisible()) {
+        commandLines.push(`${currentCommand.commandName().padEnd(stringPadding)}${currentCommand.commandDescription()}`);
+      }
     });
+
+    if (commandLines.length > 0) {
+      commandLines.forEach(function (line) { console.log(line) });
+    } else {
+      console.log('-- No commands available');
+    }
   }
 }
