@@ -26,4 +26,28 @@ module.exports = class Lakeside {
 
     Promise.all(promises).then();
   }
+
+  help() {
+    const stringPadding = 40;
+
+    console.log(`lakeside - node.js command runner
+
+Usage:
+lakeside [commands...] [flags...]
+
+Flags:
+${"--config path/to/config.js(on)".padEnd(stringPadding)}Load config from specified path
+${"--help".padEnd(stringPadding)}Show this help
+
+Commands:`);
+
+    const that = this;
+    const commandKeys = Object.keys(that.commands);
+
+    commandKeys.forEach(function (command) {
+      let currentCommand = that.commands[command];
+
+      console.log(`${currentCommand.commandName().padEnd(stringPadding)}${currentCommand.commandDescription()}`)
+    });
+  }
 }
