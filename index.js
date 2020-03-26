@@ -7,6 +7,11 @@ module.exports = class Lakeside {
     this.commands = new CommandCollector(this.configuration).collectCommands();
   }
 
+  /**
+   * Executes the given commands
+   * 
+   * @param {*} commands - Array of commands to be executed
+   */
   run(commands) {
     let that = this;
     const promises = [];
@@ -27,6 +32,9 @@ module.exports = class Lakeside {
     Promise.all(promises).then();
   }
 
+  /**
+   * Method to show help output and list of available commands
+   */
   help() {
     const stringPadding = 40;
 
