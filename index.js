@@ -5,13 +5,6 @@ module.exports = class Lakeside {
   constructor() {
     this.configuration = new ConfigurationCollector().resolveConfiguration();
     this.commands = new CommandCollector(this.configuration).collectCommands();
-
-    let cliArguments = process.argv.slice(2);
-    if (cliArguments.includes('--config')) {
-      cliArguments.splice(cliArguments.indexOf('--config'), 2);
-    }
-
-    this.run(cliArguments);
   }
 
   run(commands) {
@@ -23,7 +16,7 @@ module.exports = class Lakeside {
 
       if (commandKeys.includes(commandArgument)) {
         promises.push(
-          (new that.commands[commandArgument](that)).runCommand()
+          new that.commands[commandArgument](that).runCommand()
         );
       }
       else {

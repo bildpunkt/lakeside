@@ -1,4 +1,9 @@
 #!/usr/bin/env node
 const Lakeside = require('../index');
 
-new Lakeside();
+let cliArguments = process.argv.slice(2);
+if (cliArguments.includes('--config')) {
+  cliArguments.splice(cliArguments.indexOf('--config'), 2);
+}
+
+new Lakeside().run(cliArguments);
