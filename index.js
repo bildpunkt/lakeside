@@ -3,8 +3,8 @@ const CommandCollector = require('./lib/commands');
 
 module.exports = class Lakeside {
   constructor() {
-    this.configuration = new ConfigurationCollector();
-    this.commands = new CommandCollector(this.configuration);
+    this.configuration = new ConfigurationCollector().resolveConfiguration();
+    this.commands = new CommandCollector(this.configuration).collectCommands();
 
     let cliArguments = process.argv.slice(2);
     if (cliArguments.includes('--config')) {
