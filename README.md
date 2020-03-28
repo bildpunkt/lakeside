@@ -29,6 +29,7 @@ Running `lakeside` on your command line will show you the CLI and flag reference
 To get lakeside up and running for your projects, follow the documentation:
 * [Configuration](./docs/configuration.md)
 * [Commands](./docs/commands.md)
+* [Class/Command API](./docs/api.md)
 
 ## Motivation
 
